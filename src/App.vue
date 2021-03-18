@@ -1,8 +1,12 @@
 <template>
   <div>
     <nav class="link-nav">
-      <router-link to="/" class="link">Home</router-link>
-      <router-link to="/users" class="link">Users</router-link>
+      <router-link to="/" class="link" active-class="active--link" exact
+        >Home</router-link
+      >
+      <router-link to="/users" class="link" active-class="active--link" exact
+        >Users</router-link
+      >
     </nav>
     <router-view></router-view>
   </div>
@@ -16,5 +20,9 @@
 }
 .link {
   margin-right: 2rem;
+}
+
+.active--link {
+  font-size: 20px;
 }
 </style>
