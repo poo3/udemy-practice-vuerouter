@@ -8,6 +8,6 @@ Vue.use(Router)
 export default new Router({
   routes:[
     {path: '/',component: Home},
-    {path: '/users',component: Users}
+    {path: '/users/:id',component: Users}
   ]
 })
