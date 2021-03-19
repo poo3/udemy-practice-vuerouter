@@ -5,6 +5,7 @@
     <router-link to="/users/2" class="link">ユーザ2</router-link>
     <hr />
     <h3>ユーザ{{ id }}</h3>
+    <router-view></router-view>
   </div>
 </template>
 
