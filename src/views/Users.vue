@@ -6,10 +6,13 @@
     <hr />
     <h3>ユーザ{{ id }}</h3>
     <router-link
-      :to="{ name: 'users-id-profile', params: { id: Number(id) + 1 } }"
+      :to="{ name: 'users-id-profile', params: { id: Number(id) + 1 } ,hash: '#hash-content'}"
       >次のユーザ</router-link
     >
     <router-view></router-view>
+    <div >
+      <p id="hash-content">ハッシュコンテンツ</p>
+    </div>
   </div>
 </template>
 
@@ -28,4 +31,5 @@ export default {
 .link {
   margin-right: 2rem;
 }
+
 </style>

@@ -11,27 +11,39 @@ Vue.use(Router);
 
 export default new Router({
   routes: [
-    { path: "/", components: {
-      default: Home,
-      header: HeaderHome
-    } },
+    {
+      path: "/",
+      components: {
+        default: Home,
+        header: HeaderHome,
+      },
+    },
     {
       path: "/users/:id",
-      components: 
-      {  default: Users,
-        header: HeaderUsers
-      },
+      components: { default: Users, header: HeaderUsers },
       props: {
         default: true,
-        header: false
+        header: false,
       },
       children: [
         { path: "profile", component: UsersProfile, name: "users-id-profile" },
         { path: "posts", component: UsersPosts },
       ],
-    },{
+    },
+    {
       path: "*",
-      redirect: "/"
-    }
+      redirect: "/",
+    },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    }
+    if (to.hash) {
+      return {
+        selector: to.hash,
+      };
+    }
+    return { x: 0, y: 0 };
+  },
 });
