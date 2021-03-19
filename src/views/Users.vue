@@ -5,6 +5,10 @@
     <router-link to="/users/2" class="link">ユーザ2</router-link>
     <hr />
     <h3>ユーザ{{ id }}</h3>
+    <router-link
+      :to="{ name: 'users-id-profile', params: { id: Number(id) + 1 } }"
+      >次のユーザ</router-link
+    >
     <router-view></router-view>
   </div>
 </template>
@@ -21,7 +25,7 @@ export default {
 </script>
 
 <style scoped>
-  .link {
-    margin-right: 2rem;
-  }
+.link {
+  margin-right: 2rem;
+}
 </style>
