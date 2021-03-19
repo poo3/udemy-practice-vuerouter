@@ -1,5 +1,6 @@
 <template>
   <div>
+    <router-view name="header"></router-view>
     <nav class="link-nav">
       <router-link to="/" class="link" active-class="active--link" exact
         >Home</router-link
