@@ -6,11 +6,15 @@
     <hr />
     <h3>ユーザ{{ id }}</h3>
     <router-link
-      :to="{ name: 'users-id-profile', params: { id: Number(id) + 1 } ,hash: '#hash-content'}"
+      :to="{
+        name: 'users-id-profile',
+        params: { id: Number(id) + 1 },
+        hash: '#hash-content',
+      }"
       >次のユーザ</router-link
     >
     <router-view></router-view>
-    <div >
+    <div>
       <p id="hash-content">ハッシュコンテンツ</p>
     </div>
   </div>
@@ -24,6 +28,23 @@ export default {
       console.log("ユーザが変わりました！");
     },
   },
+  beforeRouteEnter(to, from, next) {
+    next((vm) => {
+      console.log(vm.id);
+    });
+  },
+  beforeRouteUpdate(to, from, next) {
+    console.log("beforeRouteUpdate");
+    next();
+  },
+  beforeRouteLeave(to, from, next) {
+    const isLeave = window.confirm("本当にページを離れますか？");
+    if (isLeave) {
+      next();
+    } else {
+      next(false);
+    }
+  },
 };
 </script>
 
@@ -31,5 +52,4 @@ export default {
 .link {
   margin-right: 2rem;
 }
-
 </style>
