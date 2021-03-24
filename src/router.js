@@ -1,11 +1,11 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home";
-import Users from "./views/Users";
-import UsersPosts from "./views/UsersPosts";
-import UsersProfile from "./views/UsersProfile";
-import HeaderHome from "./views/HeaderHome";
-import HeaderUsers from "./views/HeaderUsers";
+const Home = () => import("./views/Home");
+const Users = () => import("./views/Users");
+const UsersPosts = () => import("./views/UsersPosts");
+const UsersProfile = () => import("./views/UsersProfile");
+const HeaderHome = () => import("./views/HeaderHome");
+const HeaderUsers = () => import("./views/HeaderUsers");
 
 Vue.use(Router);
 
