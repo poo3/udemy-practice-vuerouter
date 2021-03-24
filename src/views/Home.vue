@@ -2,15 +2,19 @@
   <div>
     <h1>Home</h1>
     <button @click="toUsers">usersのページへ行く</button>
-    <p>{{ count }}</p>
+    <p>2の倍数{{ doubleCount }}</p>
+    <p>3の倍数{{ tripleCount }}</p>
   </div>
 </template>
 
 <script>
 export default {
   computed: {
-    count() {
-      return this.$store.state.count;
+    doubleCount() {
+      return this.$store.getters.doubleCount;
+    },
+    tripleCount() {
+      return this.$store.getters.tripleCount;
     },
   },
   methods: {
