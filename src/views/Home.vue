@@ -8,14 +8,11 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   computed: {
-    doubleCount() {
-      return this.$store.getters.doubleCount;
-    },
-    tripleCount() {
-      return this.$store.getters.tripleCount;
-    },
+    ...mapGetters(["doubleCount", "tripleCount"]),
   },
   methods: {
     toUsers() {
