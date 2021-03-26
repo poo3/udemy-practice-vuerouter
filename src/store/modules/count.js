@@ -1,0 +1,33 @@
+const state = {
+  count: 2,
+};
+
+const getters = {
+  doubleCount: (state) => state.count * 2,
+  tripleCount: (state) => state.count * 3,
+};
+
+const mutations = {
+  increment(state, number) {
+    return (state.count += number);
+  },
+  decrement(state, number) {
+    return (state.count -= number);
+  },
+};
+
+const actions = {
+  increment({ commit }, number) {
+    commit("increment", number);
+  },
+  decrement(context, number) {
+    context.commit("decrement", number);
+  },
+};
+
+export default {
+  state,
+  getters,
+  mutations,
+  actions,
+};
