@@ -12,7 +12,7 @@ import { mapGetters } from "vuex";
 
 export default {
   computed: {
-    ...mapGetters(["doubleCount", "tripleCount"]),
+    ...mapGetters("count", ["doubleCount", "tripleCount"]),
   },
   methods: {
     toUsers() {
